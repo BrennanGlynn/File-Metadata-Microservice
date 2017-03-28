@@ -8,8 +8,8 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Brennan-File-Metadata-Microservice' });
 });
 
-var upload = upload.single('file');
-router.post('/myaction', upload, function (req, res, next) {
+var fileUpload = upload.single('file');
+router.post('/myaction', fileUpload, function (req, res, next) {
   var details = req.file;
 	console.log(details);
   res.json({
